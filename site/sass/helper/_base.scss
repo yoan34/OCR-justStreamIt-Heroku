@@ -1,0 +1,27 @@
+@import './variables';
+
+a, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    // background-color: $primary-background-color;
+    margin: 0;
+    background-color: rgb(20,20,20);
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+p {
+    margin: 0;
+    padding: 0;
+}
+

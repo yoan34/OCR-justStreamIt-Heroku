@@ -1,0 +1,24 @@
+@import '../helper/mixins';
+
+.header {
+    display: flex;
+
+    &__container-link {
+        display: flex;
+        align-items: center;
+    }
+    &__link {
+        color: $header-text-no-focus;
+        font-family: 'Lato', sans-serif;
+        margin: 0 0.5rem;
+        &--brand {
+            color: $primary-color;
+            font-family: 'Lato', sans-serif;
+            margin: 1rem 0.5rem;
+        }
+
+        &.active {
+            color: $header-text-focus;
+        }
+    }
+}

@@ -1,0 +1,186 @@
+@import '../helper/mixins';
+
+.movie {
+    width: 100%;
+    height: 93vh;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background: url('../../static/img/movies_background.jpg') no-repeat center center/cover;
+    // @media (orientation: landscape) {
+    //     background: url('../../static/img/movies_background.jpg') no-repeat center center/cover;
+    // }
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background: rgba(0,0,0,0.85);
+    }
+
+    &__section {
+        width: 100%;
+        height: 93vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-evenly;
+        @media (orientation: landscape) and (min-width: 1px) {
+            flex-direction: row-reverse;
+            align-items: unset;
+            justify-content: unset;
+            width: 85%;
+        }
+        @media (orientation: landscape) and (min-width: 800px) {
+            flex-direction: row-reverse;
+            align-items: unset;
+            justify-content: unset;
+            width: 72.5%;
+        }
+
+        @media (orientation: landscape) and (min-width: 1200px) {
+            flex-direction: row-reverse;
+            align-items: unset;
+            justify-content: unset;
+            width: 60%;
+        }
+    }
+
+    &__title {
+        @include modal-text(unset, $color: $primary-color);
+        font-size: 1.3rem;
+        font-weight: 700;
+        text-align: center;
+        z-index: 2;
+        margin: 0.8rem 0;
+    }
+
+    &__container__img {
+        width: 95%;
+        height: 75%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        z-index: 2;
+    }
+
+    &__img {
+        width: 100%;
+        max-width: 450px;
+        height: 100%;
+        object-fit: contain;
+        @media (orientation: landscape) and (min-width: 800px) {
+            object-fit: contain;
+            max-width: 320px;
+        }
+        @media (orientation: landscape) and (min-width: 1200px) {
+            margin-top: 2.5rem;
+            max-width: 420px;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 70%;
+        height: 15%;
+        position: relative;
+        z-index: 2;
+        @media (orientation: landscape) {
+            height: 75%;
+            justify-content: center;
+        }
+
+        &__title {
+            @include modal-text-grey(unset, $size: 1.4rem, $color: rgb(223, 223, 223));
+            margin: 0.75rem 0;
+            text-align: center;
+            display: none;
+            @media (orientation: landscape) and (min-width: 900px) {
+                font-size: 1.8rem;
+            }
+        }
+
+        &__genre {
+            @include modal-text-grey(unset, $size: 1rem, $color: rgb(223, 223, 223));
+            text-align: center;
+            @media (orientation: landscape) and (min-width: 900px) {
+                font-size: 1.4rem;
+            }
+        }
+
+        &__plot {
+            @include modal-text-grey(unset, $size: 0.8rem, $color: rgb(223, 223, 223));
+            max-width: 600px;
+            margin: 0.3rem 1.5rem;
+            text-align: center;
+            display: none;
+            @media (orientation: landscape) and (min-width: 900px) {
+                font-size: 1.2rem;
+                margin: 1.5rem 1.5rem;
+            }
+        }
+
+        &__container {
+            display: flex;
+            justify-content: center;
+        }
+
+        &__btn__play {
+            position: relative;
+            width: 6.5rem;
+            height: 2rem;
+            background-color:  rgb(223, 223, 223);
+            margin: 0 1rem;
+            text-align: center;
+            line-height: 2rem;
+            border-radius: 4px;
+            @media (orientation: landscape) {
+                margin: 1.5rem 1rem;
+            }
+
+            & p {
+                @include modal-text-grey(unset, $size: 1rem, $color:black);
+                &:nth-of-type(1) {
+                    margin-left: 1rem;
+                }
+            }
+
+            &__triangle {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 0;
+                height: 0;
+                margin-right: 1.5rem;
+                border-style: solid;
+                border-width: 6px 0 6px 10.4px;
+                border-color: transparent transparent transparent black;
+                margin-left: 1rem;
+            }
+        }
+        &__btn__info {
+            width: 6.5rem;
+            height: 2rem;
+            background-color:  rgb(223, 223, 223);
+            margin: 0 1rem;
+            text-align: center;
+            line-height: 2rem;
+            border-radius: 4px;
+            @media (orientation: landscape) {
+                margin: 1.5rem 1rem;
+            }
+            & p {
+                @include modal-text-grey(unset, $size: 1rem, $color:black);
+            }
+        }
+    }
+}
+
+

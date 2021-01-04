@@ -1,0 +1,27 @@
+@import './variables';
+
+@mixin modal-text( $order, $color: $modal-text-color, $margin-top: $modal-mt) {
+    color: $color;
+    margin-top: $modal-mt;
+    width: 90%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 400;
+    order: $order;
+}
+
+@mixin modal-text-grey($order, $weight: 700, $size: 0.8rem, $color: #696a6d, $font: $font-lato) {
+
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+    order: $order;
+    font-family: $font;
+}
+
+@mixin query-modal-text-1200 {
+    @media (orientation: landscape) and (min-width: 1200px) {
+        font-size: 1rem;
+        margin: 0.5rem 0;
+    }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "prog_sass",
+  "version": "1.0.0",
+  "description": "Bienvenue dans le README du projet JustStreamIt !",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:static/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoan34/justStreamIt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yoan34/justStreamIt/issues"
+  },
+  "homepage": "https://github.com/OpenClassrooms-Student-Center/P5-Python-FR#readme",
+  "dependencies": {
+    "sass": "^1.29.0"
+  }
+}

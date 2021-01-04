@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JustStreamIt</title>
+    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <header class='header'>
+        <a class="header__link--brand" href="http://127.0.0.1:5000/">
+            JustStreamIt
+        </a>
+        <div class="header__container-link">
+            <a class="header__link active" href="http://127.0.0.1:5000/">
+                Accueil
+            </a>
+            <a class="header__link" href="http://127.0.0.1:5000/categories">
+                Catégories
+            </a>
+        </div>
+    </header>
+
+    <section class="movie">
+            <p class="movie__title">Best Movie</p>
+            <div class="movie__section">
+                <div class="movie__container__img">
+                    <img class="movie__img" src={{ movie.img }} alt="bestmovie"/>
+                </div>
+                <div class="movie__info">
+                    <p class="movie__info__title">{{ movie.title }}</p>
+                    <p class="movie__info__genre">{{ movie.genres }}</p>
+                    <p class="movie__info__plot">{{ movie.plot }}</p>
+                    <div class="movie__info__container">
+                        <div class="movie__info__btn__play">
+                            <div class="movie__info__btn__play__triangle"></div>
+                            <p>Play</p>
+                        </div>
+                        <div class="movie__info__btn__info"><p id={{ movie.id }}>More Info</p></div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+
+    {% for category in categories %}
+
+        <section class="carousel">
+            <div class="carousel__wrapper">
+                <h2 class="carousel__title"> {{ category }}</h2>
+                <div class="carousel__items">
+                    {% for data in categories[category] %}
+                        <div class="carousel__items__container">
+                            <img id={{ data[0] }}  class="carousel__items__image" src={{ data[1] }} alt="movie" />
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="carousel__btn left"><</div>
+                <div class="carousel__btn right">></div>
+            </div>
+        </section>
+    {% endfor %}
+    
+
+    {% include 'modal.html' %}
+
+    <footer class='footer'>
+        <a class="footer__link" href="http://127.0.0.1:5000/">
+            JustStreamIt
+        </a>
+    </footer>
+
+
+  </body>
+  <script src="static/js/home.js"></script>
+  <script src="static/js/carousel.js"></script>
+  <script src="static/js/modal.js"></script>
+</html>
